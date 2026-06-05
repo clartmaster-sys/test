@@ -2500,7 +2500,7 @@ do
 					Name = "\0",
 					ImageColor3 = FromRGB(94, 213, 213),
 					ScaleType = Enum.ScaleType.Slice,
-					ImageTransparency = 0.5,
+					ImageTransparency = 1,
 					BorderColor3 = FromRGB(0, 0, 0),
 					BackgroundColor3 = FromRGB(255, 255, 255),
 					Size = UDim2New(1, 25, 1, 25),
