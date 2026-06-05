@@ -2730,7 +2730,6 @@ do
 					Size = UDim2New(0, 295, 0, 220),
 					BorderSizePixel = 0,
 					ZIndex = 8,
-					Visible = false,
 					BackgroundColor3 = FromRGB(24, 28, 36),
 				})
 				Items["ArmorViewer"]:AddToTheme({ BackgroundColor3 = "Background 2" })
