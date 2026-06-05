@@ -9,7 +9,7 @@ do
 	local Players = game:GetService("Players")
 	local HttpService = game:GetService("HttpService")
 	local RunService = game:GetService("RunService")
-	local CoreGui = cloneref and cloneref(game:GetService("CoreGui")) or game:GetService("CoreGui")
+	local CoreGui = Players.LocalPlayer:WaitForChild("PlayerGui")
 	local TweenService = game:GetService("TweenService")
 	local Lighting = game:GetService("Lighting")
 
@@ -195,15 +195,15 @@ do
 
 	local Themes = {
         ["Preset"] = {
-            ["Window Outline"] = FromRGB(0, 34, 37),
-            ["Accent"] = FromRGB(94, 213, 213),
-            ["Background 1"] = FromRGB(17, 21, 27),
+            ["Window Outline"] = FromRGB(0, 0, 0),
+            ["Accent"] = FromRGB(252, 3, 123),
+            ["Background 1"] = FromRGB(15, 9, 12),
             ["Text"] = FromRGB(255, 255, 255),
-            ["Inline"] = FromRGB(19, 25, 31),
-            ["Element"] = FromRGB(32, 38, 48),
+            ["Inline"] = FromRGB(18, 0, 9),
+            ["Element"] = FromRGB(32, 0, 12),
             ["Inactive Text"] = FromRGB(185, 185, 185),
-            ["Border"] =  FromRGB(46, 52, 61),
-            ["Background 2"] = FromRGB(24, 28, 36)
+            ["Border"] =  FromRGB(58, 7, 33),
+            ["Background 2"] = FromRGB(15, 9, 12)
         }
 	}
 
@@ -588,7 +588,7 @@ do
 					if Resizing then
 						EndResizing()
 					end
-				end
+				endSign)
 			end)
 
 			Library:Connect(RunService.RenderStepped, function()
@@ -2730,6 +2730,7 @@ do
 					Size = UDim2New(0, 295, 0, 220),
 					BorderSizePixel = 0,
 					ZIndex = 8,
+					Visible = false, -- CHANGED: SET TO FALSE BY DEFAULT
 					BackgroundColor3 = FromRGB(24, 28, 36),
 				})
 				Items["ArmorViewer"]:AddToTheme({ BackgroundColor3 = "Background 2" })
@@ -2852,7 +2853,7 @@ do
 				})
 			end
 
-			function Viewer:Add(Name, Icon)
+			function Viewer:Add(Name)
 				local NewItemTable = {}
 
 				local NewItem = Instances:Create("Frame", {
@@ -2874,19 +2875,19 @@ do
 					ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
 				}):AddToTheme({ Color = "Border" })
 
-				local NewIcon = Instances:Create("ImageLabel", {
-					Parent = NewItem.Instance,
-					Name = "\0",
-					BorderColor3 = FromRGB(0, 0, 0),
-					AnchorPoint = Vector2New(0.5, 0.5),
-					ZIndex = 8,
-					Image = "rbxassetid://" .. Icon,
-					BackgroundTransparency = 1,
-					Position = UDim2New(0.5, 0, 0.5, 0),
-					Size = UDim2New(0, 50, 0, 50),
-					BorderSizePixel = 0,
-					BackgroundColor3 = FromRGB(255, 255, 255),
-				})
+				-- local NewIcon = Instances:Create("ImageLabel", {
+					--Parent = NewItem.Instance,
+					--Name = "\0",
+					--BorderColor3 = FromRGB(0, 0, 0),
+					--AnchorPoint = Vector2New(0.5, 0.5),
+					--ZIndex = 8,
+					--Image = "rbxassetid://" .. Icon,
+					--BackgroundTransparency = 1,
+					--Position = UDim2New(0.5, 0, 0.5, 0),
+					--Size = UDim2New(0, 50, 0, 50),
+					--BorderSizePixel = 0,
+					--BackgroundColor3 = FromRGB(255, 255, 255),
+				--})
 
 				function NewItemTable:Remove()
 					NewItem:Clean()
@@ -3294,7 +3295,7 @@ do
 
 			local Window = {
 				Name = Data.Name or Data.name or "Bronx Dupe",
-				Logo = Data.Logo or Data.logo or "121644323941494",
+				--Logo = Data.Logo or Data.logo or "121644323941494",
 
 				Pages = {},
 				Items = {},
@@ -3365,7 +3366,7 @@ do
 					Name = "\0",
 					ImageColor3 = FromRGB(255, 0, 0),
 					BorderColor3 = FromRGB(0, 0, 0),
-					Image = "rbxassetid://77298421442104",
+					Image = "rbxassetid://",
 					BackgroundTransparency = 1,
 					Position = UDim2New(0, 8, 0, 10),
 					Size = UDim2New(0, 18, 0, 18),
