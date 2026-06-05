@@ -2774,23 +2774,6 @@ do
 					Transparency = NumSequence({ NumSequenceKeypoint(0, 0), NumSequenceKeypoint(1, 1) }),
 				})
 
-				Items["Title"] = Instances:Create("TextLabel", {
-					Parent = Items["ArmorViewer"].Instance,
-					Name = "\0",
-					FontFace = Library.Font,
-					TextColor3 = FromRGB(255, 255, 255),
-					BorderColor3 = FromRGB(0, 0, 0),
-					Text = "inventory",
-					Size = UDim2New(0, 0, 0, 15),
-					Position = UDim2New(0, 8, 0, 8),
-					BackgroundTransparency = 1,
-					TextXAlignment = Enum.TextXAlignment.Left,
-					BorderSizePixel = 0,
-					ZIndex = 8,
-					AutomaticSize = Enum.AutomaticSize.X,
-					TextSize = 14,
-					BackgroundColor3 = FromRGB(255, 255, 255),
-				})
 				Items["Title"]:AddToTheme({ TextColor3 = "Text" })
 
 				Items["Holder"] = Instances:Create("Frame", {
