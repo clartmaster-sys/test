@@ -2852,7 +2852,7 @@ do
 				})
 			end
 
-			function Viewer:Add(Name, Icon)
+			function Viewer:Add(Name)
 				local NewItemTable = {}
 
 				local NewItem = Instances:Create("Frame", {
@@ -2874,19 +2874,19 @@ do
 					ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
 				}):AddToTheme({ Color = "Border" })
 
-				local NewIcon = Instances:Create("ImageLabel", {
-					Parent = NewItem.Instance,
-					Name = "\0",
-					BorderColor3 = FromRGB(0, 0, 0),
-					AnchorPoint = Vector2New(0.5, 0.5),
-					ZIndex = 8,
-					Image = "rbxassetid://" .. Icon,
-					BackgroundTransparency = 1,
-					Position = UDim2New(0.5, 0, 0.5, 0),
-					Size = UDim2New(0, 50, 0, 50),
-					BorderSizePixel = 0,
-					BackgroundColor3 = FromRGB(255, 255, 255),
-				})
+				-- local NewIcon = Instances:Create("ImageLabel", {
+					--Parent = NewItem.Instance,
+					--Name = "\0",
+					--BorderColor3 = FromRGB(0, 0, 0),
+					--AnchorPoint = Vector2New(0.5, 0.5),
+					--ZIndex = 8,
+					--Image = "rbxassetid://" .. Icon,
+					--BackgroundTransparency = 1,
+					--Position = UDim2New(0.5, 0, 0.5, 0),
+					--Size = UDim2New(0, 50, 0, 50),
+					--BorderSizePixel = 0,
+					--BackgroundColor3 = FromRGB(255, 255, 255),
+				--})
 
 				function NewItemTable:Remove()
 					NewItem:Clean()
